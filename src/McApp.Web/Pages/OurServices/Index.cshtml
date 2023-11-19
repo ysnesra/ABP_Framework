@@ -1,0 +1,20 @@
+﻿@page
+@using McApp.Localization
+@using McApp.Web.Pages.OurServices
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<McAppResource> L
+@section scripts
+{
+    <abp-script src="/Pages/OurServices/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <h2>@L["PriceList"]</h2>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="OurServicesTable"></abp-table>
+    </abp-card-body>
+</abp-card>
+
+

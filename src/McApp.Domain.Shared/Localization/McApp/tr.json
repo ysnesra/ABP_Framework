@@ -1,0 +1,14 @@
+{
+  "culture": "tr",
+  "texts": {
+    "Menu:Home": "Ana sayfa",
+
+    "Menu:Appointment": "Randevu",
+    "Menu:AppointmentNew": "Yeni Randevu Oluştur",
+    "Menu:Appointments": "Liste",
+    "Menu:AppointmentCalendar": "Takvim",
+    "Menu:OurServices": "Fiyat Listesi",
+    "Welcome": "Hoşgeldiniz",
+    "LongWelcomeMessage": "Uygulamaya hoşgeldiniz. Bu, ABP framework'ü üzerine bina edilmiş bir başlangıç projesidir. Daha fazla bilgi için abp.io adresini ziyaret edebilirsiniz."
+  }
+}

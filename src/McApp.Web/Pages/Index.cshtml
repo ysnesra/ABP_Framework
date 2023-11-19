@@ -1,0 +1,169 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using McApp.Localization
+@using Volo.Abp.Users
+@model McApp.Web.Pages.IndexModel
+@inject IHtmlLocalizer<McAppResource> L
+@inject ICurrentUser CurrentUser
+
+@section styles {
+<abp-style src="/Pages/Index.css" />
+}
+
+@section scripts {
+<abp-script src="/Pages/Index.js" />
+}
+
+
+<div class="container">
+
+    <div class="p-5 text-center">
+        @*   <div class="d-inline-block bg-success text-white p-1 h5 rounded mb-4 " role="alert">
+        <h5 class="m-1"> <i class="fas fa-rocket"></i> Congratulations, <strong>MCMS</strong> is successfully running!</h5>
+        </div> *@
+
+        <h1>Welcome to the MCMS Application</h1>
+
+        @*  <p class="lead px-lg-5 mx-lg-5">@L["LongWelcomeMessage"]</p> *@
+
+        @if (!CurrentUser.IsAuthenticated)
+        {
+            <a abp-button="Primary" href="~/Account/Login"><i class="fa fa-sign-in"></i> @L["Login"]</a>
+        }
+
+
+        teantss
+        @ViewData["CurrentTenant"]
+
+    </div>
+
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-auto text-center">
+                    <img src="~/uploads/home/banner.jpg" style="max-width: 400px;" class="w-100 mb-5 my-md-3">
+                </div>
+                <div class="col-md d-flex align-items-center">
+                    <div class="pe-0 pe-md-4">
+                        <small class="text-uppercase text-muted">app</small>
+                        <h2 class="mb-4">MCMS App</h2>
+                        <p class="mb-4">
+                            İşletmenizi yönetmek karmaşık olabilir, ancak başarınız için temel olan bazı görevleri basitleştirmenin yolu var.
+                            Randevuları düzenlemek, gelir ve giderleri izlemek ve müşteri portföyünüzü büyütmek artık daha kolay ve verimli hale gelebilir.
+                            İşte bu görevleri nasıl basitçe yönetebileceğinizin basit bir cevabı: <b>  MCMS App  </b>
+                        </p>
+                        <div class="mb-4">
+                            <a href="/" class="btn btn-success mb-1">
+                                Detaylı bilgi almak için tıklayınız...
+                            </a>
+                            <a href="/buy" class="btn btn-primary mb-1">
+                                Satın Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="my-3 text-center">
+        <h3>Haydi Başlıyalım...</h3>
+        <p>
+            İşte işletmenizi daha iyi yönetmek için bir <b>MCMS App</b> kullanmanın faydaları
+
+        </p>
+    </div>
+
+    <div class="card mt-4 mb-5">
+        <div class="card-body">
+            <div class="row text-center justify-content-md-center">
+                <div class="col-lg-4">
+                    <div class="p-4">
+                        <h5 class="mb-3"><i class="fas fa-calendar text-secondary d-block my-3 fa-2x"></i>Randevu Yönetimi</h5>
+                        <p>
+                            Randevu düzenlemek işletmenizin en önemli bölümlerinden biridir. Bir web sitesi, müşterilerinizin kolayca randevu almasını ve yönetmesini sağlar. Randevu takvimi, müşterilerinizin uygun saatleri seçmesine ve sizin için en uygun zamanı belirlemenize yardımcı olur. Ayrıca, otomatik hatırlatıcılar ile müşteri kayıplarını azaltabilirsiniz.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 border-start">
+                    <div class="p-4">
+                        <h5 class="mb-3"><i class="fas fa-cubes text-secondary d-block my-3 fa-2x"></i> Gelir ve Gider Takibi</h5>
+                        <p>
+                            İşletme sahipleri için gelir ve giderleri takip etmek hayati önem taşır. Bir web sitesi, finansal bilgilerinizi günlük, aylık ve yıllık olarak kaydetmenize ve analiz etmenize yardımcı olur. Bu, kararlarınızı daha iyi bilgiye dayalı hale getirir ve işletmenizin finansal istikrarını sağlar.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 border-start">
+                    <div class="p-4">
+                        <h5 class="mb-3"><i class="fas fa-users text-secondary d-block my-3 fa-2x"></i> Personel Yönetimi</h5>
+                        <p>
+                            Personellerinizi ve onların kazançlarını yönetmek, işletmenizin başarısı için gereklidir.
+                            Personellerin günlük, aylık ve yıllık kazançlarını izlemek ve onlara bu bilgileri sağlamak, çalışan memnuniyetini artırır.
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center mt-lg-3 justify-content-md-center">
+                <div class="col-lg-4">
+                    <div class="p-4">
+                        <h5 class="mb-3"><i class="fas fa-pen-nib text-secondary d-block my-3 fa-2x"></i> Müşteri Portföyü Genişletme </h5>
+                        <p>
+                            <b>MCMS App</b> işletmenizi daha geniş bir müşteri kitlesine tanıtmanın etkili bir yoludur. İnternet üzerinden potansiyel müşterilere erişebilir, hizmetlerinizi ve ürünlerinizi sergileyebilirsiniz. Ayrıca, müşteri incelemeleri ve önerileri ile itibarınızı artırabilirsiniz.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 border-start">
+                    <div class="p-4">
+                        <h5 class="mb-3"><i class="fas fa-database text-secondary d-block my-3 fa-2x"></i> Raporlar ve Analizler </h5>
+                        <p>
+
+                            İşletmenizin performansını anlamak için kullanabileceğiniz çeşitli raporlar ve analizler sunar.
+                            Hangi hizmetlerin veya ürünlerin daha fazla talep gördüğünü, hangi müşteri segmentlerinin en karlı
+                            olduğunu ve daha fazlasını belirlemek için bu verileri kullanabilirsiniz. Bu, stratejik kararlar almanıza yardımcı olur.
+                        </p>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4 border-start">
+                    <div class="p-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-database text-secondary d-block my-3 fa-2x"></i> Kurumsal Web Sitenizi Yönetin
+                        </h5>
+                        <p>
+                            MCMS App, kurumsal web sitenizi kolayca yönetmenizi sağlayan güçlü bir araçtır. İçerik düzenleme, mobil uyumluluk ve güvenlik gibi temel işlevleri basit ve verimli bir şekilde sunar. Bu sayede işletmenizin çevrimiçi varlığını güçlendirebilir ve rekabet avantajı elde edebilirsiniz.
+
+
+
+
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+
+    <div class="mb-5 text-center">
+        <p class="align-middle">
+            <a href="https://twitter.com/mcmsapp" target="_blank" class="mx-2"><i class="fa fa-twitter"></i><span class="text-secondary">   MCMS  </span></a>
+            <a href="https://instagram.com/mcmsapp" target="_blank" class="mx-2"><i class="fa fa-instagram"></i><span class="text-secondary">  MCMS  </span></a>
+            
+        </p>
+    </div>
+
+
+</div>
